@@ -1,0 +1,43 @@
+<a href="/">Go Back</a>
+<h1>{{post.title}}</h1>
+    <p>{{post.content}}</p>
+    <hr/>
+    <h2>Comments</h2>
+    <ul>
+        {% for data in comments %}
+        <li>
+            <h4>{{data.comment_title}}</h4>
+            <p>{{data.comment_content}}</p>
+            <span>{{data.name}} -  {{data.email}}</span>
+        </li>
+        {% endfor %}
+    </ul>
+    <form action="" method="post">
+        <p>
+            <label>
+                Name
+            </label>
+            <input type="text" name="name"/>
+        </p>
+        <p>
+            <label>
+                Email
+            </label>
+            <input type="text" name="email"/>
+        </p>
+        <p>
+            <label>
+                Comment Title
+            </label>
+            <input type="text" name="title"/>
+        </p>
+        <p>
+            <label>
+                Comment  Content
+            </label>
+            <textarea  name="content"></textarea>
+        </p>
+        <input type="hidden" value="{{post.id}}"  name="post_id"/>
+        {% csrf_token %}
+        <input type="submit" value="Post Comment"/>
+    </form>

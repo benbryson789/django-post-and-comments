@@ -1,0 +1,11 @@
+<a href="/add">Add new Post</a>
+<h1>Latest Blog</h1>
+<ul>
+    {% for post in data %}
+    <li>
+        <h2>{{post.title}}</h2>
+        <p>{{post.content}}</p>
+        <a href="/details/{{post.id}}">Read More</a>
+    </li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,16 @@
+<form action="" method="post">
+    <p>
+        <label>
+            Post Title
+        </label>
+        <input type="text" name="title"/>
+    </p>
+    <p>
+        <label>
+            Post Content
+        </label>
+        <textarea  name="content"></textarea>
+    </p>
+    {% csrf_token %}
+    <input type="submit" value="Add New Post"/>
+</form>
